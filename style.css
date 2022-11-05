@@ -1,0 +1,28 @@
+html {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#mainContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 1024px;
+    width: 1024px;
+    background-color: darkgrey;
+}
+
+.newBox {
+    width: 6.25%;
+    height: 6.25%;
+    outline: solid;
+    outline-color: rgb(78, 70, 70);    
+    background-color: white;
+    
+}
+
+.newBox:hover {
+    background-color: rgb(107, 89, 89);
+
+}
