@@ -17,13 +17,13 @@ function addBoxes(size) {
 }
 
 
-
 //paint boxes
 let boxes = document.getElementsByClassName('newBox');
 function listenBox() {
     for (const box of boxes) {
             box.addEventListener('mouseover', () => {
-            box.style.backgroundColor = 'black';
+            box.style.backgroundColor = randomColour();
+            //box.style.backgroundColor = 'black';
         
         })
     }
@@ -43,9 +43,32 @@ sizeBtn.addEventListener('click', () => {
 });
 
 
+//reset grid colour
+let rstBtn = document.getElementById('rstBtn');
+
+rstBtn.addEventListener('click', rstBoxes);
+
+function rstBoxes() {
+    for (const box of boxes) {
+        box.style.backgroundColor = 'white';
+    }
+}
 
 
-
+//initialise game
 addBoxes(gridSize);
 listenBox();
 
+
+//paint colour randomiser
+let rRandom;
+let gRandom;
+let bRandom;
+
+function randomColour() {
+    rRandom = Math.floor(Math.random() * 256);
+    gRandom = Math.floor(Math.random() * 256);
+    bRandom = Math.floor(Math.random() * 256);
+    return `rgb(${rRandom}, ${gRandom}, ${bRandom})`;
+
+}
