@@ -8,7 +8,10 @@ function addBoxes(size) {
     for (let i = 0; i < (size * size); i++) {
     let newBox = document.createElement('div');
     newBox.classList.add('newBox');
+    newBox.style.width = `${100/size}%`;
+    newBox.style.height = `${100/size}%`;
     displayBox.appendChild(newBox);
+    
 
     }
 }
@@ -36,6 +39,7 @@ sizeBtn.addEventListener('click', () => {
     gridSize = window.prompt('Set size', '');
     displayBox.replaceChildren(); //remove former grid boxes
     addBoxes(gridSize);
+    listenBox();
 });
 
 
