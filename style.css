@@ -18,8 +18,6 @@ html {
 }
 
 .newBox {
-    width: 6.25%;
-    height: 6.25%;
     outline: solid;
     outline-color: rgb(78, 70, 70);    
     background-color: white;
