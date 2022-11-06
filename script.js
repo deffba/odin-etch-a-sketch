@@ -2,8 +2,10 @@ const displayBox = document.getElementById('mainContainer');
 
 
 //create grid
-function addBoxes() {
-    for (let i = 0; i < 256; i++) {
+function addBoxes(size) {
+
+
+    for (let i = 0; i < (size * size); i++) {
     let newBox = document.createElement('div');
     newBox.classList.add('newBox');
     displayBox.appendChild(newBox);
@@ -11,7 +13,7 @@ function addBoxes() {
     }
 }
 
-addBoxes();
+
 
 //paint boxes
 let boxes = document.getElementsByClassName('newBox');
@@ -24,66 +26,22 @@ function listenBox() {
     }
 }
 
+//prompt user and set size
+
+let gridSize = 16; //standard size
+
+let sizeBtn = document.getElementById('sizeBtn');
+
+sizeBtn.addEventListener('click', () => {
+    gridSize = window.prompt('Set size', '');
+    displayBox.replaceChildren(); //remove former grid boxes
+    addBoxes(gridSize);
+});
+
+
+
+
+
+addBoxes(gridSize);
 listenBox();
-
-/*
-
-
-
-//check for mouse-down
-let mouseState = false;
-
-function kukHora() {
-    mouseState = true;
-    console.log(mouseState);
-    listenBox();
-}
-
-function mouseDown() {
-    if (mouseState == false)
-    document.addEventListener('mousedown', kukHora);
-}
-
-function mouseUp() {
-    document.addEventListener('mouseup', () => {
-        mouseState = false;
-        clearInterval(mouseDown, 100);
-        
-        console.log(mouseState)
-})
-}
-
-
-setInterval(mouseDown, 100);
-
-setInterval(mouseUp, 100);
-*/
-
-
-//change box colour
-
-
-/*function paintBox(item) {
-    item.style.backgroundColor = 'black';
-}
-
-function listenBox() {
-    if (mouseState == true) {
-        for (let i = 0; i < boxes.length; i++) {
-            let boeg = boxes[i];
-            boeg.addEventListener('mouseover', paintBox(boeg));
-            console.log(boeg);
-            break;
-            
-        }
-    } else {
-        for (let i = 0; i < boxes.length; i++) {
-            boxes[i].removeEventListener('mouseover', paintBox(boxes[i]));
-            }
-    }  
-
-} */
-
-
-
 
