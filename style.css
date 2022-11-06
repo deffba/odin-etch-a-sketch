@@ -2,6 +2,10 @@ html {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 #mainContainer {
@@ -25,4 +29,10 @@ html {
 .newBox:hover {
     background-color: rgb(107, 89, 89);
 
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
 }
