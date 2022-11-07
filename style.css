@@ -36,7 +36,7 @@ body {
     justify-content: flex-start;
     height: 500px;
     width: 500px;
-    background-color: darkgrey;
+    background-color: white;
     border-radius: 2%;
     border-width: 2px;
     border-style: solid;
@@ -62,9 +62,10 @@ p {
 }
 
 .newBox {
-    outline: solid;
-    outline-color: rgba(78, 70, 70, 0.233);    
+    /*outline: solid;
+    outline-color: rgba(78, 70, 70, 0.233);   */ 
     background-color: white;
+    opacity: 0;
     
 }
 
