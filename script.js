@@ -22,18 +22,24 @@ function addBoxes(size) {
     }
 }
 
-//prompt user and set size
+//prompt user and set size, reject if >100
 
 let gridSize = 16; //standard size
 
 let sizeBtn = document.getElementById('sizeBtn');
 
-sizeBtn.addEventListener('click', () => {
+sizeBtn.addEventListener('click', setGridSize);
+
+function setGridSize() {
     gridSize = window.prompt('Set size', '');
+    if (gridSize > 100) {
+        alert('Too big, must be under 100');
+        setGridSize();
+    } else {
     displayBox.replaceChildren(); //remove former grid boxes
-    addBoxes(gridSize);
+    addBoxes(gridSize);}
     paintBox();
-});
+}
 
 //reset grid colour
 let rstBtn = document.getElementById('rstBtn');
