@@ -24,7 +24,7 @@ function addBoxes(size) {
 
 //prompt user and set size, reject if >100
 
-let gridSize = 16; //standard size
+let gridSize = 32; //standard size
 
 let sizeBtn = document.getElementById('sizeBtn');
 
